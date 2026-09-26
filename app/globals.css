@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --pts-navy: #0b192c;
+  --pts-amber: #f59e0b;
+  --pts-amber-dark: #d97706;
+  --pts-whatsapp: #25d366;
+  --pts-whatsapp-dark: #20ba5a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--pts-navy);
+}
+
+::selection {
+  background-color: rgba(245, 158, 11, 0.35);
+  color: #ffffff;
+}
+
+/* Visible keyboard focus everywhere, respects the design's amber accent */
+:focus-visible {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.bento-grid-fade-in {
+  animation: bentoFadeIn 0.6s ease-out both;
+}
+
+@keyframes bentoFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
